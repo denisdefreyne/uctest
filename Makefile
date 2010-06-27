@@ -48,6 +48,7 @@ install: uctest-lib
 	@echo
 	@mkdir -p $(PREFIX)
 	@mkdir -p $(PREFIX)/include/uctest
+	@mkdir -p $(PREFIX)/lib
 	@echo "INSTALL assert.h"
 	@install -c include/uctest/assert.h $(PREFIX)/include/uctest/assert.h
 	@echo "INSTALL private.h"
@@ -59,7 +60,7 @@ install: uctest-lib
 	@echo "INSTALL uctest.h"
 	@install -c include/uctest/uctest.h $(PREFIX)/include/uctest/uctest.h
 	@echo "INSTALL $(TARGET_LIB)"
-	@install -c $(TARGET_LIB) $(PREFIX)/lib
+	@install -c $(TARGET_LIB) $(PREFIX)/lib/$(shell basename $(TARGET_LIB))
 	@echo
 
 ###
