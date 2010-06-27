@@ -3,6 +3,8 @@ LDFLAGS_EXTRA        = -g3
 LDFLAGS_EXTRA_SAMPLE = -L/usr/local/lib
 LDFLAGS_EXTRA_LIB    =
 
+PREFIX = /usr/local
+
 CC  = cc
 LD  = cc
 
@@ -40,6 +42,25 @@ endif
 ###
 
 all: uctest-lib uctest-sample
+
+install: uctest-lib
+	@echo "======= Installing uctest…"
+	@echo
+	@mkdir -p $(PREFIX)
+	@mkdir -p $(PREFIX)/include/uctest
+	@echo "INSTALL assert.h"
+	@install -c include/uctest/assert.h $(PREFIX)/include/uctest/assert.h
+	@echo "INSTALL private.h"
+	@install -c include/uctest/private.h $(PREFIX)/include/uctest/private.h
+	@echo "INSTALL test.h"
+	@install -c include/uctest/test.h $(PREFIX)/include/uctest/test.h
+	@echo "INSTALL test_suite.h"
+	@install -c include/uctest/test_suite.h $(PREFIX)/include/uctest/test_suite.h
+	@echo "INSTALL uctest.h"
+	@install -c include/uctest/uctest.h $(PREFIX)/include/uctest/uctest.h
+	@echo "INSTALL $(TARGET_LIB)"
+	@install -c $(TARGET_LIB) $(PREFIX)/lib
+	@echo
 
 ###
 
