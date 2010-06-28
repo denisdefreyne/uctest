@@ -28,7 +28,7 @@
 
 #include <stdbool.h>
 
-extern void uc_assert(bool a_result, char *a_file, unsigned a_line, char *a_statement, char *a_message);
+extern void uc_assert(bool a_result, char *a_file, unsigned a_line, char *a_statement, const char *a_message);
 
 #define UC_ASSERT(x)				uc_assert((x), __FILE__, __LINE__, #x, "(no message)")
 #define UC_ASSERT_WITH_MSG(x, msg)	uc_assert((x), __FILE__, __LINE__, #x, msg)

@@ -26,7 +26,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-char *uc_strdup(char *a_string)
+char *uc_strdup(const char *a_string)
 {
 	/* create string */
 	char *string = malloc((strlen(a_string)+1)*sizeof(char));

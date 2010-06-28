@@ -30,7 +30,7 @@
 
 #include <uctest/private.h>
 
-uc_failure_t *uc_failure_create(char *a_file, unsigned a_line, char *a_statement, char *a_message)
+uc_failure_t *uc_failure_create(char *a_file, unsigned a_line, char *a_statement, const char *a_message)
 {
 	/* create failure */
 	uc_failure_t *failure = malloc(sizeof(uc_failure_t));

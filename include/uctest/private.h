@@ -71,8 +71,8 @@ extern uc_test_t	*g_uc_test_current;
 
 #pragma mark -
 
-extern uc_failure_t *uc_failure_create(char *a_file, unsigned a_line, char *a_statement, char *a_message);
+extern uc_failure_t *uc_failure_create(char *a_file, unsigned a_line, char *a_statement, const char *a_message);
 extern void uc_test_add_failure(uc_test_t *a_test, uc_failure_t *a_failure);
-extern char *uc_strdup(char *string);
+extern char *uc_strdup(const char *string);
 
 #endif

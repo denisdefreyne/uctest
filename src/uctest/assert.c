@@ -30,7 +30,7 @@
 #include <uctest/uctest.h>
 #include <uctest/private.h>
 
-void uc_assert(bool a_result, char *a_file, unsigned a_line, char *a_statement, char *a_message)
+void uc_assert(bool a_result, char *a_file, unsigned a_line, char *a_statement, const char *a_message)
 {
 	++g_uc_suite_current->asserts_count_total;
 	
