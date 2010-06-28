@@ -144,7 +144,7 @@ void uc_suite_run(uc_suite_t *a_test_suite)
 		for(size_t j = 0; j < test->failures_count; ++j)
 		{
 			uc_failure_t *failure = test->failures[j];
-			printf("\nFailure [%s:%u %s]: %s", failure->file, failure->line, test->name, failure->statement);
+			printf("\nFailure [%s:%u %s]: %s\n%s\n\n", failure->file, failure->line, test->name, failure->statement, failure->message);
 		}
 	}
 	

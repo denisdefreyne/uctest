@@ -30,7 +30,7 @@
 
 #include <uctest/private.h>
 
-uc_failure_t *uc_failure_create(char *a_file, unsigned a_line, char *a_statement)
+uc_failure_t *uc_failure_create(char *a_file, unsigned a_line, char *a_statement, char *a_message)
 {
 	/* create failure */
 	uc_failure_t *failure = malloc(sizeof(uc_failure_t));
@@ -41,6 +41,7 @@ uc_failure_t *uc_failure_create(char *a_file, unsigned a_line, char *a_statement
 	failure->file		= uc_strdup(a_file);
 	failure->line		= a_line;
 	failure->statement	= uc_strdup(a_statement);
-	
+	failure->message	= uc_strdup(a_message);
+
 	return failure;
 }

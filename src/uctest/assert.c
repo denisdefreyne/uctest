@@ -30,13 +30,13 @@
 #include <uctest/uctest.h>
 #include <uctest/private.h>
 
-void uc_assert(bool a_result, char *a_file, unsigned a_line, char *a_statement)
+void uc_assert(bool a_result, char *a_file, unsigned a_line, char *a_statement, char *a_message)
 {
 	++g_uc_suite_current->asserts_count_total;
 	
 	if(!a_result)
 	{
 		++g_uc_suite_current->asserts_count_failed;
-		uc_test_add_failure(g_uc_test_current, uc_failure_create(a_file, a_line, a_statement));
+		uc_test_add_failure(g_uc_test_current, uc_failure_create(a_file, a_line, a_statement, a_message));
 	}
 }
