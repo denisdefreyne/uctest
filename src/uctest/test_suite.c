@@ -138,13 +138,14 @@ void uc_suite_run(uc_suite_t *a_test_suite)
 		a_test_suite->down_callback();
 	
 	/* print failures */
+    puts("");
 	for(size_t i = 0; i < a_test_suite->tests_count; ++i)
 	{
 		uc_test_t *test = a_test_suite->tests[i];
 		for(size_t j = 0; j < test->failures_count; ++j)
 		{
 			uc_failure_t *failure = test->failures[j];
-			printf("\nFailure [%s:%u %s]: %s\n%s\n\n", failure->file, failure->line, test->name, failure->statement, failure->message);
+			printf("\nFailure [%s:%u %s]: %s\n%s\n", failure->file, failure->line, test->name, failure->statement, failure->message);
 		}
 	}
 	
